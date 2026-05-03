@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Guide India</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assistant/style.css' %}">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <button id="reset-btn" class="reset-btn" aria-label="Start Over">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                    <path d="M3 3v5h5"></path>
+                </svg>
+            </button>
+            <div class="header-content">
+                <div class="logo">
+                    <span class="flag-saffron"></span>
+                    <span class="flag-white"></span>
+                    <span class="flag-green"></span>
+                </div>
+                <h1>Election Guide India</h1>
+                <p class="subtitle">Your neutral guide to the Indian electoral process</p>
+            </div>
+        </header>
+
+        <div class="progress-bar-container">
+            <div class="progress-label" id="progress-label">Step 1 of 3: User Info</div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+                <div class="progress-step active" style="left: 0%; background-color: var(--saffron);"></div>
+                <div class="progress-step" style="left: 50%; background-color: #f0f2f5; border: 1px solid #ccc;"></div>
+                <div class="progress-step" style="left: 100%; background-color: var(--green);"></div>
+            </div>
+        </div>
+
+        <div class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+                <!-- Messages will be injected here via JS -->
+            </div>
+            
+            <div id="chat-options" class="chat-options">
+                <!-- Action buttons will be injected here via JS -->
+            </div>
+            
+            <div class="app-footer">
+                <p>Information is based on official ECI guidelines. Not an official app.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const csrfToken = "{{ csrf_token }}";
+    </script>
+    <script src="{% static 'assistant/chat.js' %}?v=2"></script>
+</body>
+</html>

@@ -19,7 +19,8 @@ COPY . /app/
 RUN python manage.py collectstatic --noinput
 
 # Expose the port the app runs on
-EXPOSE 8000
+ENV PORT=8080
+EXPOSE $PORT
 
 # Start Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "election_guide.wsgi:application"]
+CMD exec gunicorn --bind 0.0.0.0:$PORT election_guide.wsgi:application

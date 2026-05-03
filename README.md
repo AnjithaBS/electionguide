@@ -92,5 +92,5 @@ This is not an official Election Commission of India (ECI) application. All info
 - Voice assistant support
 
 ## 📸 Preview
-*(Add screenshots of your app here)*
 
+<img width="1366" height="768" alt="Screenshot from 2026-05-03 10-03-01" src="https://github.com/user-attachments/assets/5aef2fc1-879e-4a28-a3c5-8a43fe390855" />
